@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/mlops-zoomcamp-hw/02-experiment-tracking/homework/mlruns/0/2dca3ec49ff94b25b9c79064ac259884/artifacts
+end_time: 1685448968380
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2dca3ec49ff94b25b9c79064ac259884
+run_name: skittish-shark-242
+run_uuid: 2dca3ec49ff94b25b9c79064ac259884
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1685448954183
+status: 3
+tags: []
+user_id: ubuntu
