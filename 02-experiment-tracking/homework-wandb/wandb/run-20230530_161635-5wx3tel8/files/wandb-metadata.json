@@ -1,0 +1,54 @@
+{
+    "os": "Linux-5.19.0-1025-aws-x86_64-with-glibc2.35",
+    "python": "3.10.6",
+    "heartbeatAt": "2023-05-30T16:16:36.627759",
+    "startedAt": "2023-05-30T16:16:35.713870",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--wandb_project",
+        "nyc-taxi-data-tips",
+        "--wandb_entity",
+        "zhukovets",
+        "--data_artifact",
+        "zhukovets/nyc-taxi-data-tips/NYC-Taxi:v0"
+    ],
+    "state": "running",
+    "program": "/home/ubuntu/mlops-zoomcamp-hw/02-experiment-tracking/homework-wandb/train.py",
+    "codePath": "02-experiment-tracking/homework-wandb/train.py",
+    "git": {
+        "remote": "git@github.com:annzhukovets/mlops-zoomcamp-hw.git",
+        "commit": "1fdb62be31c5a0af7e090fa80feb847e45982153"
+    },
+    "email": "a.zhukovec1901@gmail.com",
+    "root": "/home/ubuntu/mlops-zoomcamp-hw",
+    "host": "ip-172-31-35-181",
+    "username": "ubuntu",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 2,
+    "cpu_count_logical": 2,
+    "cpu_freq": {
+        "current": 2399.941,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2399.941,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2399.941,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "total": 28.89361572265625,
+        "used": 12.010425567626953
+    },
+    "memory": {
+        "total": 7.760272979736328
+    }
+}

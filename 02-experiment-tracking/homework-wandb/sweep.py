@@ -25,9 +25,13 @@ def run_train(data_artifact: str):
     X_train, y_train = load_pickle(os.path.join(data_path, "train.pkl"))
     X_val, y_val = load_pickle(os.path.join(data_path, "val.pkl"))
 
-    # Define the XGBoost Regressor Mode, train the model and perform prediction
+    # Define the Random Forest Regressor Mode, train the model and perform prediction
     # TODO: Pass the parameters n_estimators, min_samples_split, min_samples_leaf from `config` to `RandomForestRegressor`
-    rf = RandomForestRegressor(max_depth=config.max_depth, random_state=0)
+    rf = RandomForestRegressor(n_estimators=config.n_estimators,
+                                max_depth=config.max_depth,
+                                min_samples_split=config.min_samples_split,
+                                min_samples_leaf=config.min_samples_leaf, 
+                                random_state=0)
     rf.fit(X_train, y_train)
     y_pred = rf.predict(X_val)
 
