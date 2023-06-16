@@ -1,0 +1,3 @@
+{
+  "main-flow": "03-orchestration/orchestrate.py:main_flow"
+}
