@@ -1,3 +1,4 @@
 {
-  "main-flow": "03-orchestration/orchestrate.py:main_flow"
+  "main-flow": "03-orchestration/orchestrate.py:main_flow",
+  "main-flow-march": "03-orchestration/orchestrate_w_march.py:main_flow_march"
 }
