@@ -11,6 +11,9 @@ import xgboost as xgb
 from prefect import flow, task
 from prefect.artifacts import create_markdown_artifact
 from datetime import date
+from prefect import flow
+from prefect.context import get_run_context
+from prefect_email import EmailServerCredentials, email_send_message
 
 
 @task(retries=3, retry_delay_seconds=2)
@@ -127,6 +130,17 @@ def train_best_model(
         )
     return None
 
+def notify_exc_by_email(exc):
+    context = get_run_context()
+    flow_run_name = context.flow_run.name
+    email_server_credentials = EmailServerCredentials.load("email-server-credentials")
+    email_send_message(
+        email_server_credentials=email_server_credentials,
+        subject=f"Flow run {flow_run_name!r} failed",
+        msg=f"Flow run {flow_run_name!r} failed due to {exc}.",
+        email_to=email_server_credentials.username,
+    )
+
 
 @flow
 def main_flow_march(
@@ -147,7 +161,11 @@ def main_flow_march(
     X_train, X_val, y_train, y_val, dv = add_features(df_train, df_val)
 
     # Train
-    train_best_model(X_train, X_val, y_train, y_val, dv)
+    try: 
+        train_best_model(X_train, X_val, y_train, y_val, dv)
+    except Exception as exc:
+        notify_exc_by_email(exc)
+        raise
 
 
 if __name__ == "__main__":
